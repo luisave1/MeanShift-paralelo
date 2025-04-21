@@ -1,13 +1,4 @@
-//#include "MeanShift.h"
-//int main() {
-//	Mat img = imread("input.jpg");
-//	cvtColor(img, img, COLOR_BGR2Lab);
-//	MeanShift ms(7.0f, 7.0f); // Ajusta hs y hr
-//	ms.MSSegmentation(img);
-//	cvtColor(img, img, COLOR_Lab2BGR);
-//	imwrite("output.jpg", img);
-//	return 0;
-//}
+//Main.cpp
 #include <chrono>
 #include <iostream>
 #include <opencv2/opencv.hpp> // Incluye las funcionalidades de OpenCV
