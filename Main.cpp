@@ -11,7 +11,7 @@
 #include <chrono>
 #include <iostream>
 #include <opencv2/opencv.hpp> // Incluye las funcionalidades de OpenCV
-#include "MeanShift.h"       // Incluye la definici髇 de la clase MeanShift
+#include "MeanShift.h"       // Incluye la definici贸n de la clase MeanShift
 
 using namespace cv;
 using namespace std;
@@ -20,7 +20,7 @@ int main() {
     // Cargar la imagen
     Mat Img = imread("C:\\Users\\LUIS FERNANDO\\Pictures\\arte\\THL.jpg");
     if (Img.empty()) {
-        cerr << "Error: No se pudo abrir o encontrar la imagen 'mandril_color.tif'" << endl;
+        cerr << "Error: No se pudo abrir o encontrar la imagen 'THL.jpg'" << endl;
         return -1;
     }
     resize(Img, Img, Size(256, 256), 0, 0, INTER_LINEAR); // Redimensionar la imagen
@@ -39,8 +39,8 @@ int main() {
     // Procesamiento de filtrado Mean Shift
     MSProc.MSFiltering(Img);
 
-    /*Procesamiento de segmentaci髇 Mean Shift (incluye el filtrado)*/
-    MSProc.MSSegmentation(Img); // Descomentar para probar la segmentaci髇
+    /*Procesamiento de segmentaci贸n Mean Shift (incluye el filtrado)*/
+    MSProc.MSSegmentation(Img); // Descomentar para probar la segmentaci贸n
 
     // Imprimir los anchos de banda utilizados
     cout << "El ancho de banda espacial es " << MSProc.hs << endl;
@@ -50,7 +50,7 @@ int main() {
     cvtColor(Img, Img, COLOR_Lab2BGR);
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> duration = end - start;
-    std::cout << "Tiempo de ejecuci髇: " << duration.count() << " ms" << std::endl;
+    std::cout << "Tiempo de ejecuci贸n: " << duration.count() << " ms" << std::endl;
     // Mostrar la imagen resultante del Mean Shift
     namedWindow("MS Picture");
     imshow("MS Picture", Img);
